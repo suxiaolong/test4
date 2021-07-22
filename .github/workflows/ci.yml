@@ -5,8 +5,8 @@ name: CI
 # 在master分支发生push事件时触发。
 on:
   push:
-    branches: [ main ]
-      - master
+    branches:
+      - main
 
 jobs: # 工作流
   build: # 自定义名称
