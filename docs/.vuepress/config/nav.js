@@ -19,6 +19,7 @@ module.exports = [
                     {text: '关于博客搭建与管理', link: '/pages/26997d/'},
                     {text: '在线编辑和新增文章的方法', link: '/pages/c5a54d/'},
                     {text: '测试aa', link: '/pages/edb7d5/'},
+                    {text: '测试ee', link: '/pages/89e390/'},
                 ]
             }
         ]
