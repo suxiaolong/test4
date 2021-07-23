@@ -3,13 +3,14 @@
 # 确保脚本抛出遇到的错误
 set -e
 
-initDist(){
-  echo $1 > base.js
+initDist() {
+  echo $1 >base.js
   npm run build
   cd docs/.vuepress/dist
 }
 
-initDist "module.exports = '/test/'"
+initDist "module.exports = '/'"
+echo 'testaa.xiaolongsu.cn' >CNAME
 # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
 
 # deploy to github
@@ -23,7 +24,7 @@ else
   git config --global user.email "1349906113@qq.com"
 fi
 
-initGit(){
+initGit() {
   git init
   git add -A
   git commit -m "${msg}"
@@ -33,7 +34,6 @@ git push -f $githubUrl master:gh-pages # 推送到github
 
 cd -
 rm -rf docs/.vuepress/dist
-
 
 # deploy to coding
 # initDist "module.exports = '/'"
