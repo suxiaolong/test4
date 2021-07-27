@@ -41,18 +41,18 @@ rm -rf docs/.vuepress/dist
 # 每次都是把全新的dist目录 init一下，提交到远程仓库
 
 # deploy to coding
-# initDist "module.exports = '/'"
-# echo 'coding-doc.xiaolongsu.cn' > CNAME  # 自定义域名
-# # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
-#
-# if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true
-#   codingUrl=git@e.coding.net:serverless-1349906113/bb/doc.git
-# else
-#   codingUrl=https://serverless-1349906113:${CODING_TOKEN}@e.coding.net:serverless-1349906113/bb/doc.git
-# fi
-#
-# initGit
-# git push -f $codingUrl master # 推送到coding
-#
-# cd -
-# rm -rf docs/.vuepress/dist
+ initDist "module.exports = '/'"
+ echo 'coding-doc.xiaolongsu.cn' > CNAME  # 自定义域名
+ # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
+
+ if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true
+   codingUrl=git@e.coding.net:serverless-1349906113/bb/doc.git
+ else
+   codingUrl=https://serverless-1349906113:${CODING_TOKEN}@e.coding.net:serverless-1349906113/bb/doc.git
+ fi
+
+ initGit
+ git push -f $codingUrl master # 推送到coding
+
+ cd -
+ rm -rf docs/.vuepress/dist
