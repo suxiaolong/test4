@@ -51,6 +51,8 @@ else
   codingUrl=https://FhThEBDkcW:${CODING_TOKEN_2}@e.coding.net/serverless-1349906113/bb/a02.git
 fi
 
+echo $codingUrl;
+
 initGit
 git push -f $codingUrl master # 推送到coding
 
