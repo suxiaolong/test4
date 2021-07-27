@@ -48,7 +48,7 @@ echo 'coding-doc.xiaolongsu.cn' > CNAME  # 自定义域名
 if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true
  codingUrl=git@e.coding.net:serverless-1349906113/bb/a01.git
 else
- codingUrl=https://FhThEBDkcW:${CODING_TOKEN}@e.coding.net/serverless-1349906113/bb/a01.git
+ codingUrl=https://FhThEBDkcW:${CODING_TOKEN_2}@e.coding.net/serverless-1349906113/bb/a01.git
 fi
 
 initGit
