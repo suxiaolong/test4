@@ -46,7 +46,7 @@ initDist "module.exports = '/'"
 # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
 
 if [ -z "$CODING_TOKEN_2" ]; then # -z 字符串 长度为0则为true
-  codingUrl=git@e.coding.net:serverless-1349906113/bb/a02.git
+  codingUrl=https://FhThEBDkcW:${CODING_TOKEN_2}@e.coding.net/serverless-1349906113/bb/a02.git
 else
   codingUrl=https://FhThEBDkcW:${CODING_TOKEN_2}@e.coding.net/serverless-1349906113/bb/a02.git
 fi
