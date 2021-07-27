@@ -36,7 +36,7 @@ git push -f $githubUrl master:gh-pages # 推送到github
 
 # 回退跟目录删除dist
 cd - # 退回开始的目录
-#rm -rf docs/.vuepress/dist
+rm -rf docs/.vuepress/dist
 
 # 每次都是把全新的dist目录 init一下，提交到远程仓库
 
