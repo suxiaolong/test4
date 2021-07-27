@@ -9,6 +9,7 @@ initDist() {
   cd docs/.vuepress/dist
 }
 
+# 打包，进入到dist目录，设置git域名
 initDist "module.exports = '/'"
 echo 'testaa.xiaolongsu.cn' >CNAME
 # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
@@ -24,6 +25,7 @@ else
   git config --global user.email "1349906113@qq.com"
 fi
 
+# 在dist里面初始化git仓库 提交代码到远程仓库
 initGit() {
   git init
   git add -A
@@ -32,22 +34,27 @@ initGit() {
 initGit
 git push -f $githubUrl master:gh-pages # 推送到github
 
-cd -
-rm -rf docs/.vuepress/dist
+# 回退跟目录删除dist
+cd - # 退回开始的目录
+#rm -rf docs/.vuepress/dist
+
+# 每次都是把全新的dist目录 init一下，提交到远程仓库
+
+
 
 # deploy to coding
-# initDist "module.exports = '/'"
-# echo 'doc.xugaoyi.com' > CNAME  # 自定义域名
-# echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
+ initDist "module.exports = '/'"
+ echo 'coding-doc.xiaolongsu.cn' > CNAME  # 自定义域名
+ # echo 'google.com, pub-7828333725993554, DIRECT, f08c47fec0942fa0' > ads.txt # 谷歌广告相关文件
 
-# if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true
-#   codingUrl=git@e.coding.net:xgy/vdoing-doc/vdoing-doc.git
-# else
-#   codingUrl=https://HmuzsGrGQX:${CODING_TOKEN}@e.coding.net/xgy/vdoing-doc/vdoing-doc.git
-# fi
+ if [ -z "$CODING_TOKEN" ]; then  # -z 字符串 长度为0则为true
+   codingUrl=git@e.coding.net:serverless-1349906113/bb/doc.git
+ else
+   codingUrl=https://serverless-1349906113:${CODING_TOKEN}@e.coding.net:serverless-1349906113/bb/doc.git
+ fi
 
-# initGit
-# git push -f $codingUrl master # 推送到coding
+ initGit
+ git push -f $codingUrl master # 推送到coding
 
-# cd -
-# rm -rf docs/.vuepress/dist
+ cd -
+ rm -rf docs/.vuepress/dist
